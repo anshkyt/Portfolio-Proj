@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <h1>Ansh Krishna</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#resume">Resume</a></li>
+                <li><a href="#blog">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Ansh Krishna</h2>
+                <p>Freshman @ Rutgers University - Computer Scientist</p>
+                <a href="#projects" class="btn">Click to Enter Portfolio</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2>About Me</h2>
+                <div class="about-content">
+                    <img src="{{ url_for('static', filename='anshk.jpg') }}" alt="My Photo" class="about-img">
+                    <p>Hello! my name is Ansh Krishna, and I am located in Edison, New Jersey. I am a passionate developer with a keen interest in web development and programming. I love creating intuitive and dynamic user experiences using technologies like HTML, CSS, JavaScript, and Python. In my free time, I enjoy exploring new technologies and working on personal projects. Feel free to explore my portfolio to learn more about my work and skills.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <h2>My Projects</h2>
+                <div class="project">
+                    <h3>Weather Application</h3>
+                    <p>Using python and APIs provided from openweathermap, I created a mini UI which allows a user to input a city, state, or country and get the exact temperature as well as the condition.</p>
+                    <a href="https://github.com/AnshKrishna/WeatherApplication" target="_blank" class="btn">View Details</a>
+                </div>
+                <div class="project">
+                    <h3>Number Guessing Game</h3>
+                    <p>Using python, I created a mini-game which involves the user getting 2 chances to guess the correct number the computer generates.</p>
+                    <a href="https://github.com/AnshKrishna/NumberGuessingGame" target="_blank" class="btn">View Details</a>
+                </div>
+                <div class="project">
+                    <h3>Temperature Converter</h3>
+                    <p>Using java, I created a process that requires user input about what temperature unit they would like to convert in, as well as the actual number.</p>
+                    <a href="https://github.com/AnshKrishna/TemperatureConverter" target="_blank" class="btn">View Details</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <h2>My Skills</h2>
+                <div class="skills-content">
+                    <img src="{{ url_for('static', filename='python.png') }}" alt="Python" class="skill-logo">
+                    <img src="{{ url_for('static', filename='javascript.png') }}" alt="JavaScript" class="skill-logo">
+                    <img src="{{ url_for('static', filename='html.png') }}" alt="HTML" class="skill-logo">
+                    <img src="{{ url_for('static', filename='css.png') }}" alt="CSS" class="skill-logo">
+                    <img src="{{ url_for('static', filename='java.png') }}" alt="Java" class="skill-logo">
+                </div>
+            </div>
+        </section>
+
+        <!-- Resume Section -->
+        <section id="resume" class="resume">
+            <div class="container">
+                <h2>Resume</h2>
+                <a href="{{ url_for('static', filename='resume.pdf') }}" target="_blank">
+                    <img src="{{ url_for('static', filename='resumeIcon.jpg') }}" alt="Resume Thumbnail" class="resume-img">
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ansh Krishna. All rights reserved.</p>
+    </footer>
+
+    <script>
+       
+        document.addEventListener('scroll', function() {
+            if (window.scrollY > 0) {
+                document.body.classList.add('faded-background');
+            } else {
+                document.body.classList.remove('faded-background');
+            }
+        });
+    </script>
+</body>
+</html>
